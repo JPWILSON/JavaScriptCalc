@@ -7,53 +7,73 @@ window.onload = function(){
 
 
 	document.getElementById("0").onclick = function(){
-		current_num += "0";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "0";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("1").onclick = function(){
-		current_num += "1";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "1";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("2").onclick = function(){
-		current_num += "2";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "2";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("3").onclick = function(){
-		current_num += "3";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "3";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("4").onclick = function(){
-		current_num += "4";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "4";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("5").onclick = function(){
-		current_num += "5";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "5";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("6").onclick = function(){
-		current_num += "6";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "6";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("7").onclick = function(){
-		current_num += "7";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "7";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("8").onclick = function(){
-		current_num += "8";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "8";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("9").onclick = function(){
-		current_num += "9";
-		document.getElementById("total").innerHTML = current_num;
+		if(current_num.length < 9){
+			current_num += "9";
+			document.getElementById("total").innerHTML = current_num;
+		}
 	}
 
 	document.getElementById("+").onclick = function(){
@@ -179,4 +199,6 @@ window.onload = function(){
 	};
 	document.getElementById("total").innerHTML = " 0.000 ";
 };
+
+Application for Employment Opportunity – July 2017: Rikatec - CTO
 */
