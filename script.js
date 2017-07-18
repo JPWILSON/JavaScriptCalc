@@ -4,12 +4,15 @@ window.onload = function(){
 	var current_num ="";
 	var subtotal =0;
 	var operator ="";
-
+	var just_pressed_operator = false;
+	var just_pressed_equals = false;
 
 	document.getElementById("0").onclick = function(){
 		if(current_num.length < 9){
 			current_num += "0";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -17,6 +20,8 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "1";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -24,6 +29,8 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "2";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -31,6 +38,8 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "3";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -38,6 +47,8 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "4";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -45,6 +56,8 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "5";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -52,6 +65,8 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "6";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -59,6 +74,8 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "7";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -66,6 +83,8 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "8";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
@@ -73,113 +92,108 @@ window.onload = function(){
 		if(current_num.length < 9){
 			current_num += "9";
 			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
 		}
 	}
 
 	document.getElementById("+").onclick = function(){
-		if(operator != ""){
-			switch(operator){
-				case "+":
-					subtotal += parseFloat(current_num);
-					break;
-				case "-":
-					subtotal -= parseFloat(current_num);
-					break;
-				case "x":
-					subtotal *= parseFloat(current_num);
-					break;
-				case "/":
-					subtotal /= parseFloat(current_num);
+		if(just_pressed_operator == false){
+			if(just_pressed_equals == true){
+				operator = "+";
+				current_num = "";
+				just_pressed_operator == true;
+				document.getElementById("total").innerHTML = operator;
 			}
+			else{
+				operator = "+";
+				subtotal = parseFloat(current_num);
+				current_num = "";
+				just_pressed_operator == true;
+				document.getElementById("total").innerHTML = operator;
+			}
+		just_pressed_equals = false;
 		}
-		operator = "+";
-		//subtotal += parseFloat(current_num);
-		current_num = "";
-		document.getElementById("total").innerHTML = operator;
 	}
 
 	document.getElementById("-").onclick = function(){
-		if(operator != ""){
-			switch(operator){
-				case "+":
-					subtotal += parseFloat(current_num);
-					break;
-				case "-":
-					subtotal -= parseFloat(current_num);
-					break;
-				case "x":
-					subtotal *= parseFloat(current_num);
-					break;
-				case "/":
-					subtotal /= parseFloat(current_num);
+		if(just_pressed_operator == false){
+			if(just_pressed_equals == true){
+				operator = "-";
+				current_num = "";
+				just_pressed_operator == true;
+				document.getElementById("total").innerHTML = operator;
 			}
-		}
-		operator = "-";
-		//subtotal += parseFloat(current_num);
-		current_num = "";
-		document.getElementById("total").innerHTML = operator;
-	}
-
-	document.getElementById("x").onclick = function(){
-		if(operator != ""){
-			switch(operator){
-				case "+":
-					subtotal += parseFloat(current_num);
-					break;
-				case "-":
-					subtotal -= parseFloat(current_num);
-					break;
-				case "x":
-					subtotal *= parseFloat(current_num);
-					break;
-				case "/":
-					subtotal /= parseFloat(current_num);
+			else{
+				operator = "-";
+				subtotal = parseFloat(current_num);
+				current_num = "";
+				just_pressed_operator == true;
+				document.getElementById("total").innerHTML = operator;
 			}
+		just_pressed_equals = false;
 		}
-		operator = "x";
-		//subtotal += parseFloat(current_num);
-		current_num = "";
-		document.getElementById("total").innerHTML = operator;
 	}
 
 	document.getElementById("/").onclick = function(){
-		if(operator != ""){
-			switch(operator){
-				case "+":
-					subtotal += parseFloat(current_num);
-					break;
-				case "-":
-					subtotal -= parseFloat(current_num);
-					break;
-				case "x":
-					subtotal *= parseFloat(current_num);
-					break;
-				case "/":
-					subtotal /= parseFloat(current_num);
+		if(just_pressed_operator == false){
+			if(just_pressed_equals == true){
+				operator = "/";
+				current_num = "";
+				just_pressed_operator == true;
+				document.getElementById("total").innerHTML = operator;
 			}
+			else{
+				operator = "/";
+				subtotal = parseFloat(current_num);
+				current_num = "";
+				just_pressed_operator == true;
+				document.getElementById("total").innerHTML = operator;
+			}
+		just_pressed_equals = false;
 		}
-		operator = "/";
-		//subtotal += parseFloat(current_num);
-		current_num = "";
-		document.getElementById("total").innerHTML = operator;
 	}
 
-	document.getElementById("equals").onclick = function(){
-		if(operator != ""){
-			switch(operator){
-				case "+":
-					subtotal += parseFloat(current_num);
-					break;
-				case "-":
-					subtotal -= parseFloat(current_num);
-					break;
-				case "x":
-					subtotal *= parseFloat(current_num);
-					break;
-				case "/":
-					subtotal /= parseFloat(current_num);
+	document.getElementById("x").onclick = function(){
+		if(just_pressed_operator == false){
+			if(just_pressed_equals == true){
+				operator = "x";
+				current_num = "";
+				just_pressed_operator == true;
+				document.getElementById("total").innerHTML = operator;
 			}
+			else{
+				operator = "x";
+				subtotal = parseFloat(current_num);
+				current_num = "";
+				just_pressed_operator == true;
+				document.getElementById("total").innerHTML = operator;
+			}
+		just_pressed_equals = false;
 		}
+	}
+
+
+	document.getElementById("equals").onclick = function(){
+		//console.log(subtotal);
+		if(just_pressed_operator == false && operator != ""){
+			if(operator == "+"){
+				subtotal += parseFloat(current_num);
+			}
+			else if(operator == "-"){
+				subtotal -= parseFloat(current_num);
+			}
+			else if(operator == "x"){
+				subtotal *= parseFloat(current_num);
+			}
+			else {
+				subtotal /= parseFloat(current_num);
+			}
+			operator = "";
+			current_num = "";
+			just_pressed_operator == false;
+		}
+		just_pressed_equals = true;
 		document.getElementById("total").innerHTML = subtotal;
 	}
 };
