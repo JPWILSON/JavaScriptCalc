@@ -213,6 +213,19 @@ window.onload = function(){
 			document.getElementById("total").innerHTML = subtotal;
 		}
 	}
+
+	document.getElementById("clear").onclick = function(){
+		document.getElementById("total").innerHTML = "";
+	}
+
+	document.getElementById("clearall").onclick = function(){
+		document.getElementById("total").innerHTML = " 0.000 ";
+		current_num ="";
+		subtotal =0;
+		operator ="";
+		just_pressed_operator = false;
+		just_pressed_equals = false;
+	}
 };
 
 /*
