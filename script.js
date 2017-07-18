@@ -97,6 +97,15 @@ window.onload = function(){
 		}
 	}
 
+	document.getElementById("decimal").onclick = function(){
+		if(current_num.length < 9){
+			current_num += ".";
+			document.getElementById("total").innerHTML = current_num;
+			just_pressed_operator = false;
+			just_pressed_equals = false;
+		}
+	}
+
 	document.getElementById("+").onclick = function(){
 		if(just_pressed_operator == false){
 			if(just_pressed_equals == true){
@@ -194,7 +203,15 @@ window.onload = function(){
 			just_pressed_operator == false;
 		}
 		just_pressed_equals = true;
-		document.getElementById("total").innerHTML = subtotal;
+		var res= subtotal.toString();
+		console.log(res);
+		if(res.length > 10){
+			res = res.substr(0,9);
+			document.getElementById("total").innerHTML = res;
+		}
+		else{
+			document.getElementById("total").innerHTML = subtotal;
+		}
 	}
 };
 
